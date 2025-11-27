@@ -39,7 +39,7 @@ export async function sendOrderConfirmation({
     }
 
     try {
-        const data = await resend.emails.send({
+        const { data, error } = await resend.emails.send({
             from: 'onboarding@resend.dev', // Default testing domain
             to: [email],
             subject: `Поръчка #${orderId} - The Good Life Hub`,
@@ -52,6 +52,11 @@ export async function sendOrderConfirmation({
                 deliveryCost,
             }),
         });
+
+        if (error) {
+            console.error('Resend API Error:', error);
+            return { success: false, error };
+        }
 
         return { success: true, data };
     } catch (error) {
