@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { ProductCard } from "@/components/ui/product-card"
-import { featuredProducts, categories } from "@/lib/data"
-import { motion } from "framer-motion"
-import Link from "next/link"
-import Image from "next/image"
+import { Button } from "@/components/ui/button";
+import { ProductCard } from "@/components/ui/product-card";
+import { featuredProducts, categories } from "@/lib/data";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -92,13 +92,10 @@ export default function Home() {
                   className="group relative overflow-hidden rounded-3xl bg-white p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary/20"
                 >
                   <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                    {/* Icon placeholder based on index/name could go here */}
                     <span className="text-2xl font-bold">{index + 1}</span>
                   </div>
                   <h3 className="mb-2 text-xl font-bold text-foreground">{category.name}</h3>
-                  <p className="text-muted-foreground">
-                    {category.description}
-                  </p>
+                  <p className="text-muted-foreground">{category.description}</p>
                 </motion.div>
               </Link>
             ))}
@@ -120,7 +117,7 @@ export default function Home() {
             </div>
             <Link href="/category/all">
               <Button variant="ghost" className="text-primary hover:text-primary/80 hover:bg-primary/10">
-                Виж Всички &rarr;
+                Виж Всички →
               </Button>
             </Link>
           </div>
@@ -141,5 +138,5 @@ export default function Home() {
         </div>
       </section>
     </div>
-  )
+  );
 }

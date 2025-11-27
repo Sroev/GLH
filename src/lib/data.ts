@@ -22,6 +22,27 @@ export const featuredProducts: Product[] = [
         image: "/images/good-mind.png",
         category: "Добър Ум",
     },
+    {
+        id: "4",
+        name: "Добро Тяло: Фитнес и Здраве",
+        price: 29.99,
+        image: "/images/good-body.png",
+        category: "Добро Тяло",
+    },
+    {
+        id: "5",
+        name: "Добър Дом: Уют и Организация",
+        price: 34.99,
+        image: "/images/good-home.png",
+        category: "Добър Дом",
+    },
+    {
+        id: "6",
+        name: "Добри Събития: Общност и Срещи",
+        price: 15.99,
+        image: "/images/good-events.png",
+        category: "Добри Събития",
+    },
 ]
 
 export const categories = [

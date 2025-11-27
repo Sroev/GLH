@@ -8,6 +8,7 @@ import { DeliverySelector } from "./DeliverySelector"
 import { PaymentSelector } from "./PaymentSelector"
 import { motion } from "framer-motion"
 import { useRouter } from "next/navigation"
+import { placeOrder } from "@/actions/place-order"
 
 export function CheckoutForm() {
     const router = useRouter()
@@ -33,11 +34,21 @@ export function CheckoutForm() {
         e.preventDefault()
         setIsProcessing(true)
 
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 2000))
+        try {
+            const result = await placeOrder({ ...formData, delivery }, items)
 
-        clearCart()
-        router.push("/checkout/success")
+            if (result.success) {
+                clearCart()
+                router.push("/checkout/success")
+            } else {
+                alert("Възникна грешка при поръчката. Моля, опитайте отново.")
+            }
+        } catch (error) {
+            console.error(error)
+            alert("Възникна грешка. Моля, опитайте отново.")
+        } finally {
+            setIsProcessing(false)
+        }
     }
 
     if (items.length === 0) {
