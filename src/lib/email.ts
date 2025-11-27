@@ -1,6 +1,7 @@
 import { Resend } from 'resend';
 import { OrderConfirmationTemplate } from '@/components/email/OrderConfirmationTemplate';
 
+// Note: RESEND_API_KEY must be set in Vercel Environment Variables for production emails.
 const resend = process.env.RESEND_API_KEY
     ? new Resend(process.env.RESEND_API_KEY)
     : null;
