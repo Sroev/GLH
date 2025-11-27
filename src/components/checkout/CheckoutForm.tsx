@@ -38,6 +38,9 @@ export function CheckoutForm() {
             const result = await placeOrder({ ...formData, delivery }, items)
 
             if (result.success) {
+                if (result.emailError) {
+                    alert(`Поръчката е приета, но имейлът не можа да бъде изпратен: ${JSON.stringify(result.emailError)}`)
+                }
                 clearCart()
                 router.push("/checkout/success")
             } else {

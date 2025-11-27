@@ -27,8 +27,7 @@ export async function placeOrder(formData: any, items: any[]) {
 
         if (!emailResult.success) {
             console.error("Email sending failed:", emailResult.error)
-            // We might still want to return success if the order was "placed" but email failed, 
-            // but for now let's treat it as a warning or just proceed.
+            return { success: true, orderId, emailError: emailResult.error }
         }
 
         return { success: true, orderId }
