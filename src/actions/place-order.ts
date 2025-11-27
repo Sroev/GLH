@@ -30,7 +30,7 @@ export async function placeOrder(formData: any, items: any[]) {
             return { success: true, orderId, emailError: emailResult.error }
         }
 
-        return { success: true, orderId }
+        return { success: true, orderId, isMock: emailResult.id === 'mock-id' }
     } catch (error) {
         console.error("Order placement failed:", error)
         return { success: false, error: "Failed to place order" }

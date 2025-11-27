@@ -40,6 +40,8 @@ export function CheckoutForm() {
             if (result.success) {
                 if (result.emailError) {
                     alert(`Поръчката е приета, но имейлът не можа да бъде изпратен: ${JSON.stringify(result.emailError)}`)
+                } else if (result.isMock) {
+                    alert("Внимание: Системата работи в тестов режим (Mock Mode). API ключът не е намерен, затова имейлът не е изпратен реално.")
                 }
                 clearCart()
                 router.push("/checkout/success")
