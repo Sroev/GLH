@@ -14,12 +14,12 @@ export function Navbar() {
     const cartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0)
 
     const categories = [
-        { name: "Добра Храна", href: "/category/good-food" },
-        { name: "Добри Пари", href: "/category/good-money" },
-        { name: "Добър Ум", href: "/category/good-mind" },
-        { name: "Добро Тяло", href: "/category/good-body" },
-        { name: "Добър Дом", href: "/category/good-home" },
-        { name: "Добри Събития", href: "/category/good-events" },
+        { name: "Good Food", href: "/category/good-food" },
+        { name: "Good Money", href: "/category/good-money" },
+        { name: "Good Mind", href: "/category/good-mind" },
+        { name: "Good Body", href: "/category/good-body" },
+        { name: "Good Home", href: "/category/good-home" },
+        { name: "Good Events", href: "/category/good-events" },
     ]
 
     return (
