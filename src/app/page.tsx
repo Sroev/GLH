@@ -69,40 +69,6 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Categories Section */}
-      <section className="py-24 bg-[image:var(--gradient-section)]">
-        <div className="container mx-auto px-4">
-          <div className="mb-16 text-center">
-            <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
-              Нашите Категории
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Всичко необходимо за пълноценен живот
-            </p>
-          </div>
-
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {categories.map((category, index) => (
-              <Link key={category.slug} href={`/category/${category.slug}`}>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="group relative overflow-hidden rounded-3xl bg-white p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary/20"
-                >
-                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                    <span className="text-2xl font-bold">{index + 1}</span>
-                  </div>
-                  <h3 className="mb-2 text-xl font-bold text-foreground">{category.name}</h3>
-                  <p className="text-muted-foreground">{category.description}</p>
-                </motion.div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Featured Products Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
