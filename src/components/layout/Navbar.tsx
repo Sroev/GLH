@@ -13,6 +13,7 @@ export function Navbar() {
     const cartItems = useCartStore((state) => state.items)
     const cartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0)
 
+    // Categories in English as per user request
     const categories = [
         { name: "Good Food", href: "/category/good-food" },
         { name: "Good Money", href: "/category/good-money" },
